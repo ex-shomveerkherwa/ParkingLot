@@ -8,6 +8,22 @@ public abstract class Vehicle {
 	private final VehicleType type;
 	private ParkingTicket ticket;
 	
+	public String getLiceseNumber() {
+		return liceseNumber;
+	}
+
+	public void setLiceseNumber(String liceseNumber) {
+		this.liceseNumber = liceseNumber;
+	}
+
+	public ParkingTicket getTicket() {
+		return ticket;
+	}
+
+	public VehicleType getType() {
+		return type;
+	}
+	
 	public Vehicle(VehicleType type) {
 		this.type=type;
 	}
