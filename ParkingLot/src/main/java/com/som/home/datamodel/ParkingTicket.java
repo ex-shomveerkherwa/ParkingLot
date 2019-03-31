@@ -62,4 +62,9 @@ public class ParkingTicket {
 		this.endTime = endTime;
 	}
 
+	@Override
+	public String toString() {
+		return "ParkingTicket [id=" + id + ", startTime=" + startTime + ", status=" + status
+				+ ", vehicleRegistrationNumber=" + vehicleRegistrationNumber + "]";
+	}
 }
