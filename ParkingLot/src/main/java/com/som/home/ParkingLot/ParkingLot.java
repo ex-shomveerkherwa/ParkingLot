@@ -1,9 +1,12 @@
 package com.som.home.ParkingLot;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import com.som.home.Constants.VehicleType;
+import com.som.home.Utility.DummyData;
 import com.som.home.datamodel.Address;
+import com.som.home.datamodel.EntrancePanel;
 import com.som.home.datamodel.Panel;
 import com.som.home.datamodel.ParkingFloor;
 import com.som.home.datamodel.ParkingRate;
@@ -26,15 +29,19 @@ public class ParkingLot {
 	private final int maxMotorbikeSpotCount = 10;
 	
 	
-	private HashMap<String, Panel> entryPanel;
+	private HashMap<String, EntrancePanel> entrancePanel;
 	private HashMap<String, Panel> exitPanel;
-	private HashMap<String, ParkingFloor> parkingFloor;
+	private Map<String, ParkingFloor> parkingFloorMap;
 	private HashMap<String, ParkingTicket> activeTickets;
 
 	private static ParkingLot parkingLot = null;
 
 	private ParkingLot() {
-
+		// initialize the attributes from db , 
+		DummyData dummy = new DummyData();
+		parkingFloorMap.put("1", dummy.getParkingFloor());
+		
+		
 	}
 
 	public static ParkingLot getInstance() {
@@ -46,14 +53,16 @@ public class ParkingLot {
 
 	public ParkingTicket getNewParkingTicket(Vehicle vehicle) throws Exception {
 		
-		if(isFull(vehicle.getType())) {
+		VehicleType type = vehicle.getType();
+		
+		if(isFull(type)) {
 			throw new Exception("No available spots ");
 		}
 		
 		ParkingTicket ticket = new ParkingTicket();
 		vehicle.assignTicket(ticket);
 		//TODO : save the ticket to db , after saving perform the below steps 
-		incrementSpotCount(vehicle.getType());
+		incrementSpotCount(type);
 		this.activeTickets.put(ticket.getId(),ticket);
 		return ticket;
 	}
