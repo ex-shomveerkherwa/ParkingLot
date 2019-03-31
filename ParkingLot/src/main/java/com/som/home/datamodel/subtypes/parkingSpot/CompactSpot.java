@@ -5,7 +5,7 @@ import com.som.home.datamodel.ParkingSpot;
 
 public class CompactSpot extends ParkingSpot{
 
-	public CompactSpot(ParkingSpotType type) {
-		super(type.COMPACT);
+	public CompactSpot() {
+		super(ParkingSpotType.COMPACT);
 	}
 }
