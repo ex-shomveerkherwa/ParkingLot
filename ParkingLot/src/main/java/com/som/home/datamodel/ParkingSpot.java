@@ -9,8 +9,14 @@ public class ParkingSpot {
 	private ParkingSpotType type;
 	private boolean free;
 	
-	public ParkingSpot(ParkingSpotType type) {
+	public boolean isFree() {
+		return free;
+	}
+
+	public ParkingSpot(ParkingSpotType type,String number) {
+		this.number = number;
 		this.type=type;
+		free=true;
 	}
 	
 	public boolean assignVehicle(Vehicle vehicle) {
@@ -25,5 +31,7 @@ public class ParkingSpot {
 		return true;
 	}
 	
-	
+	public String getNumber() {
+		return number;
+	}
 }

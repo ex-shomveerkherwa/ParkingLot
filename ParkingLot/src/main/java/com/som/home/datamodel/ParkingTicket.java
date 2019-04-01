@@ -4,16 +4,33 @@ import java.util.Date;
 
 import com.som.home.Constants.ParkingSpotType;
 import com.som.home.Constants.ParkingTicketStatus;
+import com.som.home.Utility.DateUtils;
 
 public class ParkingTicket {
 
 	String id;
 	Date startTime;
 	ParkingSpotType spotType;
+	String parkingSpotId;
 	ParkingTicketStatus status;
 	String vehicleRegistrationNumber;
 	Date endTime;
 
+	public ParkingTicket (String id) {
+		this.id = id;
+		startTime = DateUtils.getCurrentDate();
+		status= ParkingTicketStatus.ACTIVE;
+	}
+	
+	
+	public String getParkingSpotId() {
+		return parkingSpotId;
+	}
+
+	public void setParkingSpotId(String parkingSpotId) {
+		this.parkingSpotId = parkingSpotId;
+	}
+	
 	public String getId() {
 		return id;
 	}
