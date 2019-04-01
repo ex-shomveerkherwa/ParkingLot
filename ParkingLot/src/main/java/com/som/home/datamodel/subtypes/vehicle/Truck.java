@@ -5,8 +5,8 @@ import com.som.home.datamodel.Vehicle;
 
 public class Truck extends Vehicle{
 	
-	public Truck() {
-		super(VehicleType.TRUCK);
+	public Truck(String licenseNumber) {
+		super(VehicleType.TRUCK ,licenseNumber);
 	}
 
 }

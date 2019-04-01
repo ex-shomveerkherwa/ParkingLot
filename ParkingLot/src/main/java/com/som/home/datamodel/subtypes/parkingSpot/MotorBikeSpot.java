@@ -5,8 +5,8 @@ import com.som.home.datamodel.ParkingSpot;
 
 public class MotorBikeSpot extends ParkingSpot {
 
-	public MotorBikeSpot(ParkingSpotType type) {
-		super(type.MOTORBIKE);
+	public MotorBikeSpot(ParkingSpotType type,String number) {
+		super(type.MOTORBIKE,number);
 	}
 
 }

@@ -5,8 +5,8 @@ import com.som.home.datamodel.ParkingSpot;
 
 public class LargeSpot extends ParkingSpot{
 
-	public LargeSpot() {
-		super(ParkingSpotType.LARGE);
+	public LargeSpot(String number) {
+		super(ParkingSpotType.LARGE,number);
 	}
 
 }

@@ -5,7 +5,7 @@ import com.som.home.datamodel.ParkingSpot;
 
 public class HandicappedSpot extends ParkingSpot{
 
-	public HandicappedSpot() {
-		super(ParkingSpotType.HANDICAPPED);
+	public HandicappedSpot(String number) {
+		super(ParkingSpotType.HANDICAPPED,number);
 	}
 }

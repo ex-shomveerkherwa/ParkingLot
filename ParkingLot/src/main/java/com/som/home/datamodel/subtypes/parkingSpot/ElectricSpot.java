@@ -5,7 +5,7 @@ import com.som.home.datamodel.ParkingSpot;
 
 public class ElectricSpot extends ParkingSpot{
 
-	public ElectricSpot() {
-		super(ParkingSpotType.ELECTRIC);
+	public ElectricSpot(String number) {
+		super(ParkingSpotType.ELECTRIC,number);
 	}
 }

@@ -5,7 +5,7 @@ import com.som.home.datamodel.Vehicle;
 
 public class MotorCycle extends Vehicle{
 	
-	public MotorCycle() {
-		super(VehicleType.MOTORBIKE);
+	public MotorCycle(String licenseNumber) {
+		super(VehicleType.MOTORBIKE ,licenseNumber);
 	}
 }
